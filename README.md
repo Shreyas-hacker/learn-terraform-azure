@@ -21,12 +21,12 @@ To streamline the process of setting up your Azure VM, we've provided an externa
 This script will:
 - Initialize Terraform
 - Apply the Terraform configuration to create Azure resources
-- Connect to the newly created VM
 - Install necessary software and dependencies
+- Connect to the newly created VM
 - Configure the VM for your specific use case
 
 4. Follow any prompts that appear during the script execution.
 
-After the script completes, your Azure VM will be fully set up and ready for use.
+After the script completes, your Azure VM will be fully set up and also torn down after the execution of the entire `.sh` script.
 
 Note: Make sure to review the `setup_vm.sh` script before running it to understand the exact steps it will perform in your Azure environment.
