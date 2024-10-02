@@ -1,0 +1,15 @@
+# ignore terraform state files
+*.tfstate.*
+*.tfstate
+
+# ignore terraform plan output
+*.tfplan
+
+#ignore terraform lock files
+.terraform.lock.hcl
+
+#ignore terraform init
+.terraform
+
+#ignore ssh
+.ssh
