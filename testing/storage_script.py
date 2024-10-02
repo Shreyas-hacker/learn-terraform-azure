@@ -5,7 +5,7 @@ from azure.storage.blob import BlobServiceClient
 try:
     print("Connecting to Azure Storage...")
 
-    account_url = "https://shreyastesting.blob.core.windows.net"
+    account_url = "https://<storageaccount>.blob.core.windows.net"
     default_credential = DefaultAzureCredential()
 
     print("Connected to Azure Storage")
