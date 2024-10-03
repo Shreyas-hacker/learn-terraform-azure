@@ -135,7 +135,7 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
 }
 
 resource "null_resource" "vm-provision" {
-  depends_on = [ azurerm_linux_virtual_machine.my_terraform_vm ]
+  depends_on = [ azurerm_linux_virtual_machine.my_terraform_vm, azurerm_virtual_machine_extension.example ]
 
   provisioner "remote-exec" {
     connection {
