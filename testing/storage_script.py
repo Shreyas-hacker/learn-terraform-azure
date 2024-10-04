@@ -41,10 +41,6 @@ try:
     with open(file=upload_file_path, mode="rb") as data:
         blob_client.upload_blob(data)
 
-    # Clean up
-    print("\nPress the Enter key to begin clean up")
-    input()
-
     print("Deleting blob container...")
     container_client.delete_container()
 
