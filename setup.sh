@@ -38,3 +38,6 @@ sudo apt-get install azure-cli -y
 
 # install python3.10-venv
 sudo apt install python3.10-venv -y
+
+# install pip
+sudo apt install python3-pip -y
