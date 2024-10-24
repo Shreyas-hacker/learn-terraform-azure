@@ -4,7 +4,7 @@ region = "ap-southeast-1"
 
 # inference instance and volume
 inference_instance_type = "ml.g4dn.xlarge"
-volume_size_sagemaker = 5
+volume_size_sagemaker = 16
 
 
 # lambda function
