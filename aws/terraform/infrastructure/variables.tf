@@ -1,5 +1,5 @@
 variable "region" {
-  type = string
+  type    = string
 }
 
 variable "project_name" {
@@ -27,6 +27,10 @@ variable "memory_size" {
 variable "timeout" {
   type = string
   default = "200"
+}
+
+variable "training_instance_type" {
+  type = string
 }
 
 variable "inference_instance_type" {
