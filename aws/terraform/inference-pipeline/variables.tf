@@ -1,51 +1,50 @@
-variable "region" {
-  type = string
-  default = "ap-southeast-2"
+variable region {
+  type    = string
+  default = "ap-southeast-1"
 }
 
-variable "project_name" {
+variable project_name {
   type = string
   description = "Name of the project"
 }
 
-variable "inference_instance_type" {
+variable training_instance_type {
   type = string
-  description = "Instance type for the inference"
+  description = "Instance type for training the ML model"
 }
 
-variable "s3_object_inference_data" {
+variable inference_instance_type {
   type = string
-  description = "S3 object for the inference data"
+  description = "Instance type for training the ML model"
 }
 
-variable "s3_bucket_output_models_path" {
+variable s3_bucket_input_training_path {
   type = string
-  description = "S3 bucket for the output models"
+  description = "S3 path where training data is stored"
 }
 
-variable "lambda_function_name" {
+variable s3_object_training_data {
+  type = string
+  description = "S3 path where training data is stored"
+}
+
+variable s3_bucket_output_models_path {
+  type = string
+  description = "S3 path were the output (trained models etc.) will be stored"
+}
+
+variable lambda_function_name {
   type = string
   description = "Name of the lambda function creating a unique ID"
 }
-
-variable "handler_path" {
+variable handler_path {
   type = string
   description = "Path of the lambda handler"
 }
 
-variable "handler" {
+variable handler {
   type = string
-  description = "Name of the lambda handler"
-}
-
-variable "lambda_folder" {
-  type = string
-  description = "Folder of the lambda function"
-}
-
-variable "lambda_zip_filename" {
-  type = string
-  description = "Name of the lambda zip file"
+  description = "Name of the lambda function handler"
 }
 
 variable "runtime" {
@@ -61,12 +60,21 @@ variable "memory_size" {
 
 variable "timeout" {
   type = string
-  description = "Timeout Lambda in seconds"
+  description = "Timeout Lambda in Seconds"
   default = "200"
 }
 
-variable "volume_size_sagemaker" {
-  type = number
-  description = "Volume size for the SageMaker instance in GB"
+variable lambda_folder {
+  type = string
+  description = "Folder for the lambda function"
 }
 
+variable lambda_zip_filename {
+  type = string
+  description = "The filename of the zip function from the lambda function"
+}
+
+variable volume_size_sagemaker {
+  type = number
+  description = "Volume size SageMaker instance in GB"
+}
