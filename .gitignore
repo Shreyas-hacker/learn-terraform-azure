@@ -13,3 +13,6 @@
 
 #ignore ssh
 .ssh
+
+#ignore lambda function zip in aws
+*.zip
