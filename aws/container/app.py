@@ -3,7 +3,7 @@ import ast
 import torch
 import numpy as np
 from typing import List
-from fasstapi import FastAPI
+from fastapi import FastAPI
 from pydantic import BaseModel
 from torchvision import transforms
 from PIL import Image
