@@ -18,3 +18,9 @@ venv
 .venv
 env
 .env
+
+#ignore pycache
+__pycache__
+
+#ignore data folder
+data
