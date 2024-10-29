@@ -215,8 +215,15 @@ resource "aws_s3_bucket" "bucket_training_data" {
 resource "aws_s3_bucket_acl" "bucket_training_data_acl" {
   bucket = aws_s3_bucket.bucket_training_data.id
   acl    = "private"
+  depends_on = [ aws_s3_bucket_ownership_controls.s3_bucket_acl_ownership_training ]
 }
 
+resource "aws_s3_bucket_ownership_controls" "s3_bucket_acl_ownership_training" {
+  bucket = aws_s3_bucket.bucket_training_data.id
+  rule {
+    object_ownership = "ObjectWriter"
+  }
+}
 resource "aws_s3_object" "object" {
   bucket = aws_s3_bucket.bucket_training_data.id
   key    = "iris.csv"
@@ -230,6 +237,15 @@ resource "aws_s3_bucket" "bucket_output_models" {
 resource "aws_s3_bucket_acl" "bucket_output_models_acl" {
   bucket = aws_s3_bucket.bucket_output_models.id
   acl    = "private"
+  depends_on = [ aws_s3_bucket_ownership_controls.s3_bucket_acl_ownership ]
+}
+
+# Resource to avoid error "AccessControlListNotSupported": The bucket does not allow ACLs
+resource "aws_s3_bucket_ownership_controls" "s3_bucket_acl_ownership" {
+  bucket = aws_s3_bucket.bucket_output_models.id
+  rule {
+    object_ownership = "ObjectWriter"
+  }
 }
 
 #################################################
