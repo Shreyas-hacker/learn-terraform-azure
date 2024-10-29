@@ -24,3 +24,6 @@ __pycache__
 
 #ignore data folder
 data
+
+#ignore lambda function zip in aws
+*.zip
