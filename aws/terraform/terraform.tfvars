@@ -1,0 +1,1 @@
+container_image = "666321473706.dkr.ecr.ap-southeast-1.amazonaws.com/mnist-model:latest"

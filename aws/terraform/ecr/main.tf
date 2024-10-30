@@ -1,0 +1,18 @@
+resource "aws_ecr_repository" "my_ecr_repo" {
+  name = var.ecr_name
+  image_tag_mutability = var.image_mutability
+  encryption_configuration {
+    encryption_type = var.encrypt_type
+  }
+
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+
+  tags = var.tags
+}
+
+output "ecr_repository_url" {
+  value = aws_ecr_repository.my_ecr_repo.repository_url
+  description = "ECR Repository URL"
+}
